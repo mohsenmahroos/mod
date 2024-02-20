@@ -21,10 +21,10 @@ public:
     inline auto& operator+=(const mod &num) { value = normalize(value+num.value); return *this; }
     inline auto& operator-=(const mod &num) { value = normalize(value-num.value); return *this; }
     inline auto& operator*=(const mod &num) { value = normalize(1ll*value*num.value); return *this; }
-    inline auto pow(uint64_t x) const {
+    inline auto pow(uint64_t y) const {
         mod z = 1;
-        for (auto y = *this; x > 0; x >>= 1, y *= y)
-            if (x&1) z *= y;
+        for (auto x = *this; y > 0; y >>= 1, x *= x)
+            if (y&1) z *= x;
         return z; }
     inline mod& operator++() { value = normalize(value+1); return *this; }
     inline mod& operator--() { value = normalize(value-1); return *this; }
