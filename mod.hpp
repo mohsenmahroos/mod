@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cstdint>
-template<int radix>
+template <int radix>
 #if __cplusplus > 202002L
 requires(radix > 1)
 #endif
